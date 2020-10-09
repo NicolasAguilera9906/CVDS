@@ -1,5 +1,5 @@
 # Escuela Colombiana de Ingeniería
-## Laboratorios de la materia Ciclos de vida de desarrollo de Software – CVDS
+## Laboratorios de la materia : Ciclos de vida de desarrollo de Software – CVDS
 
 ### Estudiantes
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="styleGuess.css" />
+</h:head>
+<h:body>
+    <style type = "text/css">
+        body{
+            body {
+                background-image: url(logo.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment:fixed;
+            }
+        }
+    </style>
+    <div align="center">
+        <img src="logo.png" alt="logo" >
+        </img>
+        <p:panel id="panel" header="Apuesta con Aguilera y Ramirez" style="margin-bottom:10px; width:500px;">
+            <h:form id="guess_form">
+                <h:panelGrid columns="1" cellpadding="5">
+                    <p:outputLabel id = "numero" value="#{guessBean.numeroAleatorio}" style="display:none"/>
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="@next" value="Ingrese  un numero entre 0 y 100" />
+                    <p:inputText  id= "intento" type="int" binding="#{input}" >
+                        <f:validateLongRange  minimum="0" maximum="100" />
+                    </p:inputText>
+                    <h:outputText value="Estado del juego"></h:outputText>
+                    <h:outputText value="#{guessBean.estado}"></h:outputText>
+                    <h:outputText value="Premio acumulado"></h:outputText>
+                    <h:outputText value="#{guessBean.premioAcumulado}"></h:outputText>
+                </h:panelGrid>
+                <h:dataTable value="#{guessBean.intentos}" var="intento">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Intentos"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{intento}"></h:outputText>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </p:panel>
+        <p:commandButton value="Submit" update="panel"  actionListener="#{guessBean.guess(input.value)}" />
+        <p:commandButton value="Reiniciar" update="panel"  actionListener="#{guessBean.restart}" />
+    </div>
+</h:body>
+</html>

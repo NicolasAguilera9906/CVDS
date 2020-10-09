@@ -1,0 +1,20 @@
+----------------------- libro.txt -----------------------
+EL LIBRO MAS FAMOSO DEL MUNDO
+
+AUTORES:
+
+Carlos Andres Ramirez Torres y Nicolas Aguilera
+
+Santiago & Manuel
+
+
+
+
+CAPITULO UNO
+
+
+CAPITULO DOS
+
+
+CAPITULO TRES
+---------------------------------------------------------
